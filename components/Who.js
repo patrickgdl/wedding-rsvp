@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Who = ({ name }) => {
   return (
@@ -11,7 +11,7 @@ const Who = ({ name }) => {
 
       <h1>{name}</h1>
     </div>
-  );
-};
+  )
+}
 
-export default Who;
+export default Who

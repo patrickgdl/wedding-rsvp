@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const When = () => {
   return (
@@ -18,7 +18,7 @@ const When = () => {
         às <span className="accent-font">4 horas</span>
       </h2>
     </div>
-  );
-};
+  )
+}
 
-export default When;
+export default When

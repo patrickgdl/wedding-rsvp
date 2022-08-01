@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Where = () => {
   return (
@@ -9,7 +9,7 @@ const Where = () => {
       <h2>Umbará, Curitiba - PR</h2>
       <h2>81940-340</h2>
     </div>
-  );
-};
+  )
+}
 
-export default Where;
+export default Where

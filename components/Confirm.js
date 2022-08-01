@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 const Confirm = () => {
   return (
@@ -23,7 +23,7 @@ const Confirm = () => {
 
       <button type="submit">Finalizar</button>
     </div>
-  );
-};
+  )
+}
 
-export default Confirm;
+export default Confirm
