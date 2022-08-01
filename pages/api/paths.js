@@ -1,12 +1,15 @@
 import { google } from "googleapis";
-import keys from "../../gcp-key.json";
+
+const credential = JSON.parse(
+  Buffer.from(process.env.GOOGLE_SERVICE_KEY, "base64").toString()
+);
 
 export default function handler(req, res) {
   try {
     const client = new google.auth.JWT(
-      keys.client_email,
+      credential.client_email,
       null,
-      keys.private_key,
+      credential.private_key,
       ["https://www.googleapis.com/auth/spreadsheets"]
     );
 

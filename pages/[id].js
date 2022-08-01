@@ -9,10 +9,10 @@ export async function getStaticPaths() {
   const req = await fetch(`${server}/api/paths`);
   const res = await req.json();
 
-  const slugs = res?.data.flat(); // remove empty values
+  const slugs = res?.data?.flat(); // remove empty values
 
   // Get the paths we want to pre-render based on slugs
-  const paths = slugs.map((slug) => ({
+  const paths = slugs?.map((slug) => ({
     params: { id: slug },
   }));
 
@@ -26,7 +26,7 @@ export async function getStaticProps({ params }) {
   const res = await req.json();
 
   // matrix of names and paths, eg: [["Patrick Lima", "patrick-lima"], ["Juliana", "juliana"]]
-  const selectedName = res?.data.find(([_, path]) => path === params.id);
+  const selectedName = res?.data?.find(([_, path]) => path === params.id);
 
   return {
     props: {
