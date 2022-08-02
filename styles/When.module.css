@@ -1,0 +1,36 @@
+.when {
+  grid-area: when;
+  padding: 25px 0;
+  border-top: 2px solid #cccac4;
+  border-bottom: 2px solid #cccac4;
+}
+
+.when h1 {
+  text-transform: uppercase;
+}
+
+.when h2 span {
+  color: #c58568;
+  font-weight: bold;
+}
+
+.when h2:nth-of-type(3),
+.when h1:nth-of-type(2) {
+  margin: 10px 0;
+}
+
+.day {
+  margin: 10px auto;
+  font-family: 'Playfair Display', serif;
+  color: #c58568;
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.hour {
+  font-family: 'Playfair Display', serif;
+  color: #c58568;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}

@@ -1,21 +1,20 @@
 import React from 'react'
 
+import styles from '../styles/When.module.css'
+
 const When = () => {
   return (
-    <div className="two">
+    <div className={styles.when}>
       <h1>Domingo</h1>
-      <div className="date accent-font">
-        <div className="day">
-          <h2>23</h2>
-        </div>
-      </div>
+
+      <h2 className={styles.day}>23</h2>
 
       <h2>de</h2>
 
       <h1>Outubro</h1>
 
       <h2>
-        às <span className="accent-font">4 horas</span>
+        às <span className={styles.hour}>4 horas</span>
       </h2>
     </div>
   )

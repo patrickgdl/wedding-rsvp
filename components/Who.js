@@ -1,11 +1,13 @@
 import React from 'react'
 
+import styles from '../styles/Who.module.css'
+
 const Who = ({ name }) => {
   return (
-    <div className="one">
-      <h1 className="gold-gradient accent-font">Patrick Lima</h1>
-      <h1 className="large-font gold-gradient accent-font">&</h1>
-      <h1 className="gold-gradient accent-font">Juliana Said</h1>
+    <div className={styles.who}>
+      <h2 className="large-font gold-gradient cursive-font">Patrick Lima</h2>
+      <h2 className="large-font gold-gradient cursive-font">&</h2>
+      <h2 className="large-font gold-gradient cursive-font">Juliana Said</h2>
 
       <h2>Convidam para o seu casamento</h2>
 

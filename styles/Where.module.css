@@ -1,0 +1,17 @@
+.where {
+  grid-area: where;
+  padding: 25px 0;
+  border-top: 2px solid #cccac4;
+  border-left: 2px solid #cccac4;
+  border-bottom: 2px solid #cccac4;
+}
+
+.where h1:nth-of-type(1),
+.where h1:nth-of-type(2) {
+  color: #c58568;
+  font-weight: bold;
+}
+
+.where h1:nth-of-type(2) {
+  margin-bottom: 20px;
+}

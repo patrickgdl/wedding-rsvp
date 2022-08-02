@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 import Confirm from '../components/Confirm.js'
 import When from '../components/When.js'
 import Where from '../components/Where.js'
@@ -24,9 +26,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const res = await loadGuests()
 
-  // matrix of names and paths, eg: [["Patrick Lima", "patrick-lima"], ["Juliana", "juliana"]]
+  // matrix of names and slugs, eg: [["Patrick Lima", "patrick-lima"], ["Juliana", "juliana"]]
   // eslint-disable-next-line no-unused-vars
-  const selectedName = res?.find(([_, path]) => path === params.id)
+  const selectedName = res?.find(([_, slug]) => slug === params.id)
 
   return {
     props: {
@@ -36,14 +38,24 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Home({ currentName }) {
+  const [accepted, setAccepted] = useState('sim')
+
+  const onChangeValue = (event) => {
+    setAccepted(event.target.value)
+  }
+
+  const onClick = () => {
+    console.log(accepted)
+  }
+
   return (
     <div className="container">
-      <div className="contents">
+      <div className="main">
         <Who name={currentName} />
         <When />
         <Where />
 
-        <Confirm />
+        <Confirm onChangeValue={onChangeValue} onClick={onClick} />
       </div>
     </div>
   )
