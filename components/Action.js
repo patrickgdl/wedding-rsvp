@@ -27,7 +27,7 @@ const options = [
   },
   {
     description: 'Presente em Dinheiro',
-    newWindo: true,
+    newWindow: true,
     link: 'https://nubank.com.br/pagar/2j9z2/uYWoPjhzeT',
     Icon: PigMoney
   }
