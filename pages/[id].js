@@ -1,6 +1,4 @@
-import { useState } from 'react'
-
-import Confirm from '../components/Confirm.js'
+import Action from '../components/Action.js'
 import When from '../components/When.js'
 import Where from '../components/Where.js'
 import Who from '../components/Who.js'
@@ -38,16 +36,6 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Home({ currentName }) {
-  const [accepted, setAccepted] = useState('sim')
-
-  const onChangeValue = (event) => {
-    setAccepted(event.target.value)
-  }
-
-  const onClick = () => {
-    console.log(accepted)
-  }
-
   return (
     <div className="container">
       <div className="main">
@@ -55,7 +43,7 @@ export default function Home({ currentName }) {
         <When />
         <Where />
 
-        <Confirm onChangeValue={onChangeValue} onClick={onClick} />
+        <Action />
       </div>
     </div>
   )

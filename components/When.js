@@ -14,7 +14,7 @@ const When = () => {
       <h1>Outubro</h1>
 
       <h2>
-        às <span className={styles.hour}>4 horas</span>
+        às <span className={styles.hour}>16 horas</span>
       </h2>
     </div>
   )

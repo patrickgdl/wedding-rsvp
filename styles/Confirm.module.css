@@ -63,3 +63,17 @@
   border-color: #4d8b59;
   z-index: 1;
 }
+
+.btn {
+  margin: 1.5rem 0;
+  padding: 0.5rem 2rem;
+  background-color: #4d8b59;
+  color: #fff;
+  border: solid 1px #4d8b59;
+  box-shadow: 0 0 10px #8da87a78;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}

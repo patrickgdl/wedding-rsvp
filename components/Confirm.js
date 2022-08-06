@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from '../styles/Actions.module.css'
+import styles from '../styles/Confirm.module.css'
 
 const Confirm = ({ onChangeValue, onClick }) => {
   return (
@@ -23,7 +23,7 @@ const Confirm = ({ onChangeValue, onClick }) => {
 
       <h2>Por favor, responda até dia 25 de agosto</h2>
 
-      <button type="button" onClick={onClick}>
+      <button type="button" className={styles.btn} onClick={onClick}>
         Finalizar →
       </button>
     </div>

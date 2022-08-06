@@ -28,17 +28,21 @@ h2 {
 }
 
 .large-font {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 .gold-gradient {
-  background-color: #c58568;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #2a6e32;
 }
 
 .cursive-font {
   font-family: 'Great Vibes', cursive;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 /* LAYOUT */
@@ -68,15 +72,30 @@ h2 {
   margin: 0 auto;
 }
 
-button {
-  margin: 1.5rem 0;
-  padding: 0.5rem 2rem;
-  background-color: #4d8b59;
-  color: #fff;
-  border: solid 1px #4d8b59;
-  box-shadow: 0 0 10px #8da87a78;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
+.button {
+  background-color: #478f4f;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: #c2fbd7;
+  cursor: pointer;
+  display: inline-block;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
