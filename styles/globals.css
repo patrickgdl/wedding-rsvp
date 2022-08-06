@@ -55,12 +55,6 @@ h2 {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 600px) {
-  .container {
-    margin: 200px auto;
-  }
-}
-
 .main {
   display: grid;
   grid-template-columns: 1fr 1fr;
