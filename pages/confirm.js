@@ -48,13 +48,13 @@ export default function Home({ current }) {
 
       // print to screen
       console.log(content)
-      alert('Obrigado por ter confirmado! Esperamos te ver lá 🥰')
+      // alert('Obrigado por ter confirmado! Esperamos te ver lá 🥰')
     } catch (error) {
       console.log(error)
 
-      alert(
-        'Algo de errado aconteceu, entre em contato com a gente para verificar o que pode ter acontecido.'
-      )
+      // alert(
+      //   'Algo de errado aconteceu, entre em contato com a gente para verificar o que pode ter acontecido.'
+      // )
     }
   }
 
