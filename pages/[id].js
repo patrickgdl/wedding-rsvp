@@ -2,12 +2,12 @@ import Action from '../components/Action.js'
 import When from '../components/When.js'
 import Where from '../components/Where.js'
 import Who from '../components/Who.js'
-import { loadGuests } from '../lib/load-guests'
-import { loadGuestsAndPaths } from '../lib/load-guests-and-paths'
+import { loadAll } from '../lib/load-all'
+import { loadPaths } from '../lib/load-paths'
 
 // This function gets called at build time and on the server side
 export async function getStaticPaths() {
-  const res = await loadGuestsAndPaths()
+  const res = await loadPaths()
 
   const slugs = res?.flat() // remove empty values
 
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await loadGuests()
+  const res = await loadAll()
 
   // matrix of names and slugs, eg: [["Patrick Lima", "patrick-lima"], ["Juliana", "juliana"]]
   // eslint-disable-next-line no-unused-vars
