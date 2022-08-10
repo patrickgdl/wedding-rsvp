@@ -25,9 +25,9 @@ export default async function handler(req, res) {
       version: 'v4'
     })
 
-    const response = await sheets.spreadsheets.values.append({
+    const response = await sheets.spreadsheets.values.update({
       spreadsheetId: process.env.SPREADSHEET_ID,
-      range: `lista!B${body.row}:C${body.row}`,
+      range: `lista!C${body.row}`,
       valueInputOption: 'USER_ENTERED',
       requestBody: {
         values: [[body.choice]]
