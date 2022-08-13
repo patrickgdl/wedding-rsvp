@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
@@ -86,6 +87,11 @@ export default function Home({ current }) {
 
   return (
     <div className="container">
+      <Head>
+        <title>Confirmação</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <div className="main">
         <Who name={currentName} />
 

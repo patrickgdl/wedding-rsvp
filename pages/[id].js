@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import Action from '../components/Action.js'
 import When from '../components/When.js'
 import Where from '../components/Where.js'
@@ -38,6 +40,11 @@ export async function getStaticProps({ params }) {
 export default function Home({ currentName }) {
   return (
     <div className="container">
+      <Head>
+        <title>Ju & Patrick</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <div className="main">
         <Who name={currentName} />
         <When />
