@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 
 import Confirm from '../components/Confirm.js'
@@ -30,14 +30,17 @@ export default function Home({ current }) {
   const currentName = current?.[0]
   const currentRow = current?.[3]
 
-  const [alreadyConfirmed, setAlreadyConfirmed] = useState(false)
-  const [accepted, setAccepted] = useState('sim')
+  const buttonRef = React.createRef()
+
+  const [choice, setChoice] = useState('sim')
 
   const onChangeValue = (event) => {
-    setAccepted(event.target.value)
+    setChoice(event.target.value)
   }
 
   const onClick = async () => {
+    buttonRef.current.classList.toggle('button--loading')
+
     try {
       const rawResponse = await fetch('/api/submit', {
         method: 'POST',
@@ -45,12 +48,10 @@ export default function Home({ current }) {
           Accept: 'application/json',
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ choice: accepted, row: currentRow })
+        body: JSON.stringify({ choice: choice, row: currentRow })
       })
 
       const content = await rawResponse.json()
-
-      setAlreadyConfirmed(true)
 
       console.log(content)
 
@@ -65,6 +66,8 @@ export default function Home({ current }) {
           color: '#4d8b59'
         }
       })
+
+      buttonRef.current.classList.toggle('button--loading')
     } catch (error) {
       console.log(error)
 
@@ -82,6 +85,8 @@ export default function Home({ current }) {
           }
         }
       )
+
+      buttonRef.current.classList.toggle('button--loading')
     }
   }
 
@@ -95,9 +100,11 @@ export default function Home({ current }) {
       <div className="main">
         <Who name={currentName} />
 
-        {!alreadyConfirmed && (
-          <Confirm onChangeValue={onChangeValue} onClick={onClick} />
-        )}
+        <Confirm
+          ref={buttonRef}
+          onChangeValue={onChangeValue}
+          onClick={onClick}
+        />
       </div>
 
       <Toaster position="bottom-center" reverseOrder={false} />

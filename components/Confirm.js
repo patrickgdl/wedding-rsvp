@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from '../styles/Confirm.module.css'
 
-const Confirm = ({ onChangeValue, onClick }) => {
+const Confirm = React.forwardRef(({ onChangeValue, onClick }, ref) => {
   return (
     <div className={styles.actions}>
       <h1>Confirme e continue abaixo</h1>
@@ -23,11 +23,13 @@ const Confirm = ({ onChangeValue, onClick }) => {
 
       <h2>Por favor, responda até dia 25 de agosto</h2>
 
-      <button type="button" className={styles.btn} onClick={onClick}>
-        Finalizar →
+      <button ref={ref} type="button" className={styles.btn} onClick={onClick}>
+        <span className="button__text">Finalizar →</span>
       </button>
     </div>
   )
-}
+})
+
+Confirm.displayName = 'Confirm'
 
 export default Confirm
