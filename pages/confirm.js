@@ -113,7 +113,7 @@ export default function Home({ current }) {
         />
       </div>
 
-      <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} />
     </div>
   )
 }
