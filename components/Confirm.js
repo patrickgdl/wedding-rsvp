@@ -21,7 +21,7 @@ const Confirm = React.forwardRef(({ onChangeValue, onClick }, ref) => {
         <label htmlFor="nope">Não</label>
       </div>
 
-      <h2>Por favor, responda até dia 25 de agosto</h2>
+      <h2>Por favor, responda até dia 30 de agosto</h2>
 
       <button ref={ref} type="button" className={styles.btn} onClick={onClick}>
         <span className="button__text">Finalizar →</span>
