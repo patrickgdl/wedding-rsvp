@@ -38,6 +38,20 @@ export default function Home({ current }) {
     setChoice(event.target.value)
   }
 
+  const toastSucess = (message, icon = '🥰') => {
+    toast(message, {
+      icon: icon,
+      duration: 6000,
+      style: {
+        border: '1px solid #4d8b59',
+        padding: '16px',
+        fontSize: '18px',
+        fontWeight: 'bold',
+        color: '#4d8b59'
+      }
+    })
+  }
+
   const onClick = async () => {
     buttonRef.current.classList.toggle('button--loading')
 
@@ -51,23 +65,16 @@ export default function Home({ current }) {
         body: JSON.stringify({ choice: choice, row: currentRow })
       })
 
-      const content = await rawResponse.json()
-
-      console.log(content)
-
-      toast('Obrigado por ter confirmado! Esperamos te ver lá.', {
-        icon: '🥰',
-        duration: 6000,
-        style: {
-          border: '1px solid #4d8b59',
-          padding: '16px',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: '#4d8b59'
-        }
-      })
+      await rawResponse.json()
 
       buttonRef.current.classList.toggle('button--loading')
+
+      choice === 'sim'
+        ? toastSucess('Obrigado por ter confirmado! Esperamos te ver lá.')
+        : toastSucess(
+            'Ah, que pena! De toda forma, agradecemos sua confirmação.',
+            '😢'
+          )
     } catch (error) {
       console.log(error)
 
